@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 25th Birthday Suor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@300;500;700&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated background elements */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 0, 139, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 144, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Roaming Pig - NO FLIP */
+        .pig-roaming {
+            position: fixed;
+            font-size: 70px;
+            user-select: none;
+            z-index: 50;
+            cursor: pointer;
+            pointer-events: all;
+            animation: roam 20s linear infinite;
+            bottom: 100px;
+            left: 20px;
+            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.4));
+        }
+
+        .pig-roaming:hover {
+            filter: drop-shadow(0 0 20px rgba(30, 144, 255, 0.8));
+            transform: scale(1.1);
+        }
+
+        @keyframes roam {
+            0% {
+                left: 20px;
+                bottom: 100px;
+            }
+            15% {
+                left: 15%;
+                bottom: 200px;
+            }
+            30% {
+                left: 35%;
+                bottom: 150px;
+            }
+            45% {
+                left: 55%;
+                bottom: 250px;
+            }
+            60% {
+                left: 75%;
+                bottom: 120px;
+            }
+            75% {
+                left: 90%;
+                bottom: 180px;
+            }
+            90% {
+                left: 50%;
+                bottom: 80px;
+            }
+            100% {
+                left: 20px;
+                bottom: 100px;
+            }
+        }
+
+        .pig-roaming-label {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.9), rgba(30, 144, 255, 0.9));
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            border: 1px solid rgba(0, 212, 255, 0.5);
+            box-shadow: 0 0 10px rgba(30, 144, 255, 0.4);
+        }
+
+        .pig-roaming:hover .pig-roaming-label {
+            opacity: 1;
+            animation: labelPop 0.3s ease-out;
+        }
+
+        @keyframes labelPop {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        /* Back Button - MIDDLE BOTTOM */
+        .back-btn-container {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 999;
+            display: none;
+        }
+
+        .back-btn-container.visible {
+            display: block;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #8a2be2 0%, #1e90ff 100%);
+            border: 2px solid rgba(138, 43, 226, 0.6);
+            color: white;
+            padding: 14px 35px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .back-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(30, 144, 255, 0.6);
+            border-color: rgba(30, 144, 255, 0.8);
+        }
+
+        .back-btn:active {
+            transform: translateY(-2px);
+        }
+
+        /* Interactive Birthday Cake */
+        .cake-section {
+            text-align: center;
+            margin: 60px 0;
+            animation: slideInDown 1s ease-out;
+        }
+
+        .cake-base {
+            font-size: 120px;
+            animation: cakeBounce 1.5s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.5));
+            transition: all 0.3s ease;
+        }
+
+        @keyframes cakeBounce {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 60px;
+            margin-bottom: 60px;
+            position: relative;
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.2) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(30, 144, 255, 0.2) 100%);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            border-radius: 30px;
+            animation: slideInDown 1s ease-out;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(138, 43, 226, 0.2);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 20px rgba(138, 43, 226, 0.5);
+        }
+
+        .age-badge {
+            display: inline-block;
+            font-size: 5rem;
+            font-weight: 900;
+            color: #fff;
+            margin: 15px 0;
+            font-family: 'Montserrat', sans-serif;
+            text-shadow: 0 0 30px rgba(30, 144, 255, 0.8);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 30px rgba(30, 144, 255, 0.8);
+            }
+            50% {
+                text-shadow: 0 0 60px rgba(30, 144, 255, 1), 0 0 100px rgba(138, 43, 226, 0.8);
+            }
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            margin: 80px 0;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .timeline-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 60px;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .timeline {
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(138, 43, 226, 0.5) 0%, rgba(30, 144, 255, 0.5) 100%);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: calc(50% + 40px);
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            padding-left: calc(50% + 40px);
+            text-align: left;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #8a2be2, #1e90ff);
+            border: 3px solid #0a0e27;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+        }
+
+        .timeline-content {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.15) 0%, rgba(0, 0, 0, 0.2) 100%);
+            padding: 25px 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .timeline-content h3 {
+            color: #00d4ff;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .timeline-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+        }
+
+        /* Grid Section */
+        .grid-section {
+            margin: 80px 0;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+
+        .grid-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.2) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(30, 144, 255, 0.2) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(30, 144, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(30, 144, 255, 0.6);
+            box-shadow: 0 20px 50px rgba(30, 144, 255, 0.3);
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #00d4ff;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Discovery Section */
+        .discovery-section {
+            margin: 80px 0;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .discovery-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            font-family: 'Montserrat', sans-serif;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .discovery-box {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.25) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(30, 144, 255, 0.25) 100%);
+            padding: 70px 50px;
+            border-radius: 25px;
+            text-align: center;
+            border: 2px solid rgba(138, 43, 226, 0.4);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .discovery-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(30, 144, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .discovery-text {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-btn {
+            background: linear-gradient(135deg, #8a2be2 0%, #1e90ff 100%);
+            border: none;
+            color: white;
+            padding: 18px 60px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(30, 144, 255, 0.6);
+        }
+
+        .journey-btn span {
+            display: block;
+            font-size: 0.8rem;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        /* Celebration Button */
+        .celebration-btn {
+            background: linear-gradient(135deg, #8a2be2 0%, #1e90ff 100%);
+            border: none;
+            color: white;
+            padding: 16px 50px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(138, 43, 226, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin: 50px auto;
+        }
+
+        .celebration-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(30, 144, 255, 0.6);
+        }
+
+        /* Final Message */
+        .final-message {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.2) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(30, 144, 255, 0.2) 100%);
+            padding: 60px 50px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            backdrop-filter: blur(10px);
+            margin-top: 80px;
+            animation: fadeInUp 1s ease-out 0.5s backwards;
+        }
+
+        .final-message h2 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .final-message p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .signature {
+            color: #00d4ff;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            font-weight: 600;
+            font-style: italic;
+        }
+
+        .final-amulet {
+            font-size: 60px;
+            margin-top: 25px;
+            animation: amuletGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes amuletGlow {
+            0%, 100% {
+                transform: scale(1);
+                filter: drop-shadow(0 0 8px rgba(30, 144, 255, 0.3));
+            }
+            50% {
+                transform: scale(1.1);
+                filter: drop-shadow(0 0 20px rgba(30, 144, 255, 0.7));
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            animation: confettiFall linear forwards;
+            z-index: 9999;
+        }
+
+        @keyframes confettiFall {
+            to {
+                transform: translateY(100vh) rotateZ(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Balloon Pop-up from Bottom */
+        .balloon-popup {
+            position: fixed;
+            font-size: 60px;
+            pointer-events: none;
+            z-index: 9999;
+            animation: balloonRise linear forwards;
+        }
+
+        @keyframes balloonRise {
+            0% {
+                bottom: -100px;
+                opacity: 1;
+                transform: translateX(0) rotate(0deg) scale(0.5);
+            }
+            10% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 110vh;
+                opacity: 0;
+                transform: translateX(var(--drift)) rotate(360deg) scale(1.2);
+            }
+        }
+
+        /* Choice Page */
+        .choice-page {
+            display: none;
+            width: 100%;
+            min-height: 100vh;
+            background: #0a0e27;
+            position: relative;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .choice-page.active {
+            display: block;
+        }
+
+        .choice-page::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 0, 139, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 144, 255, 0.1) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .choice-container {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            z-index: 100;
+        }
+
+        .choice-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 40px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .choice-side::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.15) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(30, 144, 255, 0.15) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .choice-side:hover::before {
+            opacity: 1;
+        }
+
+        .choice-left {
+            border-right: 3px solid rgba(138, 43, 226, 0.3);
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.08) 0%, rgba(30, 144, 255, 0.08) 100%);
+        }
+
+        .choice-right {
+            background: linear-gradient(135deg, rgba(30, 144, 255, 0.08) 0%, rgba(75, 0, 130, 0.08) 100%);
+        }
+
+        .choice-content {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: slideUp 0.8s ease-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .choice-emoji {
+            font-size: 100px;
+            margin-bottom: 35px;
+            animation: bounce 1.2s ease-in-out infinite;
+        }
+
+        .choice-left .choice-emoji {
+            animation-delay: 0s;
+        }
+
+        .choice-right .choice-emoji {
+            animation-delay: 0.15s; /* Restores the floating animation */
+            filter: hue-rotate(250deg) saturate(2); /* Applies the new color */
+        }
+
+        .choice-title {
+            font-size: 2.5rem;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        .choice-description {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 320px;
+            line-height: 1.8;
+            margin: 0 auto 30px auto;
+            text-align: center;
+        }
+
+        .choice-hint {
+            font-size: 0.95rem;
+            color: #00d4ff;
+            font-style: italic;
+            font-weight: 500;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.3s forwards;
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-in;
+            padding: 20px;
+        }
+
+        .video-modal.active {
+            display: flex;
+        }
+
+        .video-container {
+            background: transparent; /* Changed for cracker effect */
+            border-radius: 20px;
+            max-width: 90%;
+            width: 380px;
+            position: relative;
+            border: 1px solid rgba(30, 144, 255, 0.6);
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(30, 144, 255, 0.5);
+        }
+
+        .video-container video,
+        .video-container iframe {
+            width: 100%;
+            height: auto; /* Adjusts height to fit video aspect ratio */
+            border: none;
+            display: block;
+        }
+
+        .close-video {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #8a2be2, #1e90ff);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 28px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+        }
+
+        .close-video:hover {
+            transform: scale(1.15) rotate(90deg);
+            box-shadow: 0 0 40px rgba(30, 144, 255, 0.8);
+        }
+
+        /* Checkpoint Modal */
+        .checkpoint-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in;
+            padding: 20px;
+        }
+
+        .checkpoint-modal.active {
+            display: flex;
+        }
+
+        .checkpoint-content {
+            background: linear-gradient(135deg, rgba(75, 0, 130, 0.3) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(30, 144, 255, 0.3) 100%);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            border-radius: 30px;
+            padding: 60px 50px;
+            max-width: 500px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: popUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 0 60px rgba(138, 43, 226, 0.5);
+        }
+
+        @keyframes popUp {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .checkpoint-title {
+            font-size: 2rem;
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 30px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .checkpoint-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .checkpoint-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+            align-items: flex-start;
+            padding-left: 20px;
+        }
+
+        .checkpoint-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+        }
+
+        .checkpoint-checkbox input {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: #00d4ff;
+        }
+
+        .checkpoint-checkbox label {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .checkpoint-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .checkpoint-btn {
+            background: linear-gradient(135deg, #8a2be2 0%, #1e90ff 100%);
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            font-size: 0.95rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.4);
+        }
+
+        .checkpoint-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(30, 144, 255, 0.6);
+        }
+
+        .checkpoint-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .checkpoint-close-btn {
+            background: rgba(229, 9, 20, 0.9);
+            border: 2px solid #e50914;
+        }
+
+        .checkpoint-close-btn:hover {
+            background: #e50914;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(229, 9, 20, 0.6);
+        }
+
+                /* Cracker Burst Effect */
+        .cracker-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: cracker-burst 1.2s ease-out forwards;
+        }
+
+        @keyframes cracker-burst {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(0.5);
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--x), var(--y)) scale(0);
+            }
+        }
+
+        /* Netflix Modal */
+        .netflix-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent; /* Changed for cracker effect */
+            z-index: 3100;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s ease-in;
+            overflow: hidden;
+        }
+
+        .netflix-modal.active {
+            display: flex;
+        }
+
+        .netflix-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            overflow: hidden;
+            max-height: 100vh;
+        }
+
+        .netflix-header-section {
+            display: none;
+        }
+
+        .netflix-logo {
+            color: #e50914;
+            font-size: 2.5rem;
+            font-weight: 900;
+            letter-spacing: -6px;
+            font-family: Arial, sans-serif;
+            text-shadow: 3px 3px 0px rgba(255, 0, 0, 0.3);
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+
+        .netflix-info {
+            flex: 1;
+        }
+
+        .netflix-badge {
+            display: inline-block;
+            background: #e50914;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .netflix-title {
+            color: #fff;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .netflix-subtitle {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .netflix-description {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .netflix-video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: transparent; /* Changed for cracker effect */
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .netflix-video-container video,
+        .netflix-video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+            object-fit: contain;
+        }
+
+        .netflix-controls {
+            position: fixed;
+            top: 30px; /* Changed from bottom */
+            right: 30px;
+            z-index: 10;
+        }
+
+        .netflix-close-btn {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            width: 50px;
+            height: 50px;
+            font-size: 2rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .netflix-close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1) rotate(90deg);
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        .netflix-close-icon {
+            display: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .back-btn-container {
+                bottom: 20px;
+            }
+
+            .back-btn {
+                padding: 12px 25px;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .age-badge {
+                font-size: 3.5rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 10px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                padding-left: 50px;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-dot {
+                left: 0;
+            }
+
+            .video-container video,
+            .video-container iframe,
+            .netflix-video-container video,
+            .netflix-video-container iframe {
+                height: 500px;
+                max-width: 100%;
+            }
+
+            .discovery-box {
+                padding: 40px 20px;
+            }
+
+            .pig-roaming {
+                font-size: 50px;
+            }
+
+            .cake-base {
+                font-size: 80px;
+            }
+
+            .choice-container {
+                flex-direction: column;
+            }
+
+            .choice-left {
+                border-right: none;
+                border-bottom: 3px solid rgba(138, 43, 226, 0.3);
+            }
+
+            .choice-title {
+                font-size: 1.8rem;
+            }
+
+            .choice-emoji {
+                font-size: 70px;
+            }
+
+            .choice-side {
+                padding: 50px 20px;
+            }
+
+            .checkpoint-content {
+                padding: 40px 30px;
+                max-width: 90%;
+            }
+
+            .netflix-header-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .netflix-logo {
+                font-size: 2rem;
+            }
+
+            .netflix-title {
+                font-size: 1.8rem;
+            }
+
+            .netflix-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    
+    <!-- Back Button Container - MIDDLE BOTTOM -->
+    <div class="back-btn-container" id="backBtnContainer">
+        <button class="back-btn" onclick="goBackToHome()">
+            ← Back to Home
+        </button>
+    </div>
+
+    <!-- Roaming Pig -->
+    <div class="pig-roaming" onclick="pigClick()" title="Click me!">
+        🐷
+        <div class="pig-roaming-label">Click me for fun! 🎉</div>
+    </div>
+
+    <!-- Main Page -->
+    <div class="container" id="mainPage">
+        <!-- Interactive Birthday Cake -->
+        <div class="cake-section">
+            <div class="cake-base">🎂</div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Happy Birthday Oindrila ❤️</h1>
+                <p class="subtitle">To My Dearest Chammar</p>
+                <div class="age-badge">25</div>
+            </div>
+        </div>
+
+        <!-- Timeline Section -->
+        <div class="timeline-section">
+            <h2>Your Beautiful Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Born to Shine ✨</h3>
+                        <p>From day one, you've been someone extraordinary. Your light has always been unmistakable.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Growing Stronger 💪</h3>
+                        <p>Every year brought wisdom, strength, and unforgettable memories we'll cherish forever.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Creating Magic 🎭</h3>
+                        <p>You've touched countless hearts and created moments that will last a lifetime.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>25 &amp; Beyond 🚀</h3>
+                        <p>Today marks the beginning of your best chapter. The universe is ready for what's next.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wishes Section -->
+        <div class="grid-section">
+            <h2>My Birthday Wishes</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🌟</div>
+                    <h3>Dream Without Limits</h3>
+                    <p>May your dreams be bigger than your fears and your ambitions stronger than your doubts.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💖</div>
+                    <h3>Love Yourself First</h3>
+                    <p>You deserve all the love and kindness you give to others. Start with yourself.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔥</div>
+                    <h3>Stay Fearless</h3>
+                    <p>Life rewards the brave. Take chances, chase adventures, and never apologize for being bold.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Shine Always</h3>
+                    <p>Your presence has a unique power. Keep shining and never dim your light for anyone.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Discovery Section -->
+        <div class="discovery-section">
+            <h2>Something Special Awaits</h2>
+            <div class="discovery-box">
+                <p class="discovery-text">I've prepared a special journey for you... precious moments we've shared and a final surprise that'll leave you speechless! 🎬✨</p>
+                <button class="journey-btn" onclick="goToChoicePage()">
+                    🎁 Unlock Your Surprise
+                    <span>Reveal Two Special Videos</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Celebration Button -->
+        <button class="celebration-btn" onclick="celebrate()">✨ Celebrate the Moment ✨</button>
+
+        <!-- Final Message -->
+        <div class="final-message">
+            <h2>Forever Grateful</h2>
+            <p>Thank you for being the incredible person you are. For your kindness, strength, and the endless ways you make this world better.</p>
+            <p>You deserve a lifetime of happiness, and I'm blessed to celebrate 25 beautiful years of you.</p>
+            <p class="signature">With infinite love &amp; admiration </p>
+            <div class="final-amulet">🧿</div>
+        </div>
+    </div>
+
+    <!-- Choice Page (Split Screen) -->
+    <div class="choice-page" id="choicePage">
+        <div class="choice-container">
+            <!-- Left Side -->
+            <div class="choice-side choice-left" onclick="playVideo1()">
+                <div class="cracker-container"></div>
+                <div class="choice-content">
+                    <div class="choice-emoji">🎁</div>
+                    <h2 class="choice-title">Special Moments</h2>
+                    <p class="choice-description"><i>"A little mystery awaits."</i></p>
+                    <!-- <p class="choice-hint">🎬 Play Video</p> -->
+                </div>
+            </div>
+
+            <!-- Right Side -->
+            <div class="choice-side choice-right" onclick="playVideo2()">
+                <div class="cracker-container"></div>
+                <div class="choice-content">
+                    <div class="choice-emoji">🎁</div>
+                    <h2 class="choice-title">Our Memories</h2>
+                    <p class="choice-description"><i>"Another memory to unfold."</i></p>
+                    <!-- <p class="choice-hint">🎬 Play Video</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="cracker-container"></div>
+        <div class="video-container">
+            <button class="close-video" onclick="closeVideoModal()">×</button>
+            <video id="videoFrame" controls controlsList="nodownload"></video>
+        </div>
+    </div>
+
+    <!-- Checkpoint Modal -->
+    <div class="checkpoint-modal" id="checkpointModal">
+        <div class="checkpoint-content">
+            <h2 class="checkpoint-title">🎊 Almost There! 🎊</h2>
+            <p class="checkpoint-text">Did you watch both surprise videos?</p>
+            
+            <div class="checkpoint-checkboxes">
+                <div class="checkpoint-checkbox">
+                    <input type="checkbox" id="surprise1Check" onchange="updateButton()">
+                    <label for="surprise1Check">Watched First Surprise ?</label>
+                </div>
+                <div class="checkpoint-checkbox">
+                    <input type="checkbox" id="surprise2Check" onchange="updateButton()">
+                    <label for="surprise2Check">Watched Second Surprise ?</label>
+                </div>
+            </div>
+
+            <div class="checkpoint-buttons">
+                <button class="checkpoint-btn" id="finalBtn" onclick="playFinalVideo()" disabled>
+                    🎬 Watch Final Video
+                </button>
+                <button class="checkpoint-btn checkpoint-close-btn" onclick="closeCheckpointModal()">
+                    ✕ Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Netflix Modal (Final Video) -->
+    <div class="netflix-modal" id="netflixModal">
+        <div class="netflix-container">
+            <!-- Header with Logo and Info -->
+            <div class="netflix-header-section">
+                <div class="netflix-logo">NETFLIX</div>
+                <div class="netflix-info">
+                    <div class="netflix-badge">🎬 Feature</div>
+                    <h1 class="netflix-title">Your Special Finale</h1>
+                    <p class="netflix-subtitle">A Personalized Message</p>
+                    <p class="netflix-description">
+                        The culmination of all our memories. Happy 25th Birthday! 🎉
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video Container -->
+            <div class="netflix-video-container">
+                <video id="finalVideoFrame" controls controlsList="nodownload"></video>
+            </div>
+
+            <!-- Controls -->
+            <div class="netflix-controls">
+                <button class="netflix-close-btn" onclick="closeNetflixModal()">×</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Track video watched status
+        let videosWatched = {
+            video1: false,
+            video2: false
+        };
+
+        // Show/Hide back button based on current page
+        function updateBackButton() {
+            const backBtnContainer = document.getElementById('backBtnContainer');
+            const choicePage = document.getElementById('choicePage');
+            
+            if (choicePage.classList.contains('active')) {
+                backBtnContainer.classList.add('visible');
+            } else {
+                backBtnContainer.classList.remove('visible');
+            }
+        }
+
+        // Go back to home
+        function goBackToHome() {
+            const mainPage = document.getElementById('mainPage');
+            const choicePage = document.getElementById('choicePage');
+            const backBtnContainer = document.getElementById('backBtnContainer');
+            
+            mainPage.style.display = 'block';
+            choicePage.classList.remove('active');
+            backBtnContainer.classList.remove('visible');
+            
+            // Reset video states
+            videosWatched = { video1: false, video2: false };
+            document.getElementById('surprise1Check').checked = false;
+            document.getElementById('surprise2Check').checked = false;
+            updateButton();
+        }
+
+        // Roaming Pig Click Handler
+        function pigClick() {
+            createConfetti();
+            alert('🐷 Oink Oink! Happy Birthday Suor! 🎉');
+        }
+
+        // Go to Choice Page
+        function goToChoicePage() {
+            const mainPage = document.getElementById('mainPage');
+            const choicePage = document.getElementById('choicePage');
+            
+            mainPage.style.display = 'none';
+            choicePage.classList.add('active');
+            updateBackButton();
+            createConfetti();
+        }
+
+        // ========================================
+        // VIDEO FILES - ADD YOUR LOCAL VIDEO FILES HERE
+        // ========================================
+        const VIDEO_LINKS = {
+            leftSideVideo: 'video1.mp4',      // 👈 Change this to your Left Side Video filename
+            rightSideVideo: 'video2.mp4',     // 👈 Change this to your Right Side Video filename
+            netflixFinalVideo: 'video3.mp4'   // 👈 Change this to your Netflix Final Video filename
+        };
+        
+        // HOW TO USE YOUR DESKTOP VIDEOS:
+        // 1. Place your video files in the SAME FOLDER as this HTML file
+        // 2. Rename your videos or change the filenames above
+        // 3. Supported formats: .mp4, .webm, .mov
+        // 4. Make sure the filenames match exactly (including extension)
+        // 
+        // Example folder structure:
+        // 📁 birthday-website/
+        //    ├── index.html (this file)
+        //    ├── video1.mp4 (your left side video)
+        //    ├── video2.mp4 (your right side video)
+        //    └── video3.mp4 (your netflix final video)
+        // ========================================
+
+        // Play Video 1
+        // Background Music Control
+        const bgMusic = document.getElementById('backgroundMusic');
+
+        // Try to play music when page loads (with user interaction fallback)
+        window.addEventListener('load', () => {
+            // Attempt autoplay
+            bgMusic.play().catch(err => {
+                console.log('Autoplay prevented. Music will start on first user interaction.');
+                // Add one-time click listener to start music
+                document.body.addEventListener('click', () => {
+                    bgMusic.play();
+                }, { once: true });
+            });
+        });
+
+        // Pause background music when any video starts playing
+        function pauseBackgroundMusic() {
+            if (bgMusic && !bgMusic.paused) {
+                bgMusic.pause();
+            }
+        }
+
+        // Resume background music when video ends or is closed
+        function resumeBackgroundMusic() {
+            if (bgMusic && bgMusic.paused) {
+                bgMusic.play();
+            }
+        }
+
+        function playVideo1() {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            frame.src = VIDEO_LINKS.leftSideVideo;
+            pauseBackgroundMusic();
+        modal.classList.add('active');
+            
+            // Mark as watched when video ends
+            frame.onended = function() {
+                videosWatched.video1 = true;
+                showCheckpointIfBothWatched();
+            };
+        }
+
+        // Play Video 2
+        function playVideo2() {
+            const modal = document.getElementById('videoModal');
+            const frame = document.getElementById('videoFrame');
+            frame.src = VIDEO_LINKS.rightSideVideo;
+            pauseBackgroundMusic();
+        pauseBackgroundMusic();
+        modal.classList.add('active');
+            
+            // Mark as watched when video ends
+            frame.onended = function() {
+                videosWatched.video2 = true;
+                showCheckpointIfBothWatched();
+            };
+        }
+
+        // Close Video Modal
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            document.getElementById('videoFrame').src = '';
+            modal.classList.remove('active');
+        }
+
+        // Show checkpoint if both videos watched
+        function showCheckpointIfBothWatched() {
+            if (videosWatched.video1 && videosWatched.video2) {
+                setTimeout(() => {
+                    const checkpointModal = document.getElementById('checkpointModal');
+                    checkpointModal.classList.add('active');
+                    createConfetti();
+                }, 500);
+            }
+        }
+
+        // Update button state
+        function updateButton() {
+            const check1 = document.getElementById('surprise1Check').checked;
+            const check2 = document.getElementById('surprise2Check').checked;
+            const finalBtn = document.getElementById('finalBtn');
+            
+            finalBtn.disabled = !(check1 && check2);
+        }
+
+        // Close Checkpoint Modal
+        function closeCheckpointModal() {
+            const checkpointModal = document.getElementById('checkpointModal');
+            checkpointModal.classList.remove('active');
+        }
+
+        // Play Final Video
+        function playFinalVideo() {
+            const checkpointModal = document.getElementById('checkpointModal');
+            const netflixModal = document.getElementById('netflixModal');
+            const finalFrame = document.getElementById('finalVideoFrame');
+            
+            checkpointModal.classList.remove('active');
+            finalFrame.src = VIDEO_LINKS.netflixFinalVideo;
+            pauseBackgroundMusic();
+        netflixModal.classList.add('active');
+            createConfetti();
+        }
+
+        // Close Netflix Modal
+        function closeNetflixModal() {
+            const netflixModal = document.getElementById('netflixModal');
+            document.getElementById('finalVideoFrame').src = '';
+            netflixModal.classList.remove('active');
+        }
+
+        // Modern Confetti
+        function createConfetti() {
+            const colors = ['#667eea', '#764ba2', '#f093fb', '#4facfe', '#feca57', '#ee5a6f', '#c7ecee', '#ff6b6b', '#4ecdc4', '#ffe66d'];
+            const confettiCount = 100;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * window.innerWidth + 'px';
+                confetti.style.top = '-10px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = (Math.random() * 12 + 6) + 'px';
+                confetti.style.height = confetti.style.width;
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => confetti.remove(), 5500);
+            }
+        }
+
+        // Balloon Pop-up Animation
+        function createBalloons() {
+            // const balloonEmojis = ['🎈', '🎉', '🎊', '✨', '🎁', '🌟', '💫', '🎀', '🎆', '🎇'];
+            // const balloonEmojis = ['🎈', '🎉', '🎊', '✨', '🎁'];
+            const balloonEmojis = ['🎈'];
+            const balloonCount = 15;
+            
+            for (let i = 0; i < balloonCount; i++) {
+                setTimeout(() => {
+                    const balloon = document.createElement('div');
+                    balloon.className = 'balloon-popup';
+                    balloon.textContent = balloonEmojis[Math.floor(Math.random() * balloonEmojis.length)];
+                    
+                    const startX = Math.random() * window.innerWidth;
+                    const driftAmount = (Math.random() - 0.5) * 300;
+                    
+                    balloon.style.left = startX + 'px';
+                    balloon.style.setProperty('--drift', driftAmount + 'px');
+                    balloon.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                    balloon.style.animationDelay = Math.random() * 0.3 + 's';
+                    
+                    document.body.appendChild(balloon);
+                    
+                    setTimeout(() => balloon.remove(), 5500);
+                }, i * 100);
+            }
+        }
+
+        // Celebrate - TRIGGERS BOTH EFFECTS
+        function celebrate() {
+            createConfetti();
+            createBalloons();
+        }
+
+                // Neon Cracker Burst Effect (with dynamic density)
+        function initCrackerEffect(container) {
+            if (!container) return;
+
+            const isVideoModal = container.parentElement.id === 'videoModal';
+            const colors = ['#39ff14', '#fe019a', '#00f2ea', '#ff073a', '#f5d300', '#7df9ff']; // Neon colors
+
+            const createBurst = () => {
+                const burstCount = isVideoModal ? Math.floor(Math.random() * 25) + 30 : Math.floor(Math.random() * 10) + 15;
+                const startX = (Math.random() * 60 + 20) + '%';
+                const startY = (Math.random() * 60 + 20) + '%';
+
+                for (let i = 0; i < burstCount; i++) {
+                    const p = document.createElement('div');
+                    p.className = 'particle';
+                    p.style.left = startX;
+                    p.style.top = startY;
+
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    p.style.background = color;
+                    p.style.boxShadow = `0 0 8px ${color}, 0 0 16px ${color}`; // Neon glow
+
+                    const size = (Math.random() * 8 + 4) + 'px';
+                    p.style.width = size;
+                    p.style.height = size;
+
+                    const angle = Math.random() * 360;
+                    const radius = isVideoModal ? Math.random() * 250 + 80 : Math.random() * 150 + 50;
+                    const x = Math.cos(angle * Math.PI / 180) * radius;
+                    const y = Math.sin(angle * Math.PI / 180) * radius;
+
+                    p.style.setProperty('--x', x + 'px');
+                    p.style.setProperty('--y', y + 'px');
+
+                    container.appendChild(p);
+                    setTimeout(() => p.remove(), 1500);
+                }
+
+                const nextTimeout = isVideoModal ? Math.random() * 400 + 300 : 1200;
+                setTimeout(createBurst, nextTimeout);
+            };
+
+            createBurst();
+        }
+
+        // Initial confetti on page load
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                createConfetti();
+            }, 1200);
+
+            // Init cracker effects
+            const crackerContainers = document.querySelectorAll('.cracker-container');
+            crackerContainers.forEach(initCrackerEffect);
+        });
+    
+        // Add event listeners to pause music when videos play
+        document.getElementById('videoFrame').addEventListener('play', pauseBackgroundMusic);
+        document.getElementById('finalVideoFrame').addEventListener('play', pauseBackgroundMusic);
+
+        // Resume music when videos end
+        document.getElementById('videoFrame').addEventListener('ended', resumeBackgroundMusic);
+        document.getElementById('finalVideoFrame').addEventListener('ended', resumeBackgroundMusic);
+
+        // Resume music when videos are paused
+        document.getElementById('videoFrame').addEventListener('pause', function() {
+            if (this.ended || !document.getElementById('videoModal').classList.contains('active')) {
+                resumeBackgroundMusic();
+            }
+        });
+        document.getElementById('finalVideoFrame').addEventListener('pause', function() {
+            if (this.ended || !document.getElementById('netflixModal').classList.contains('active')) {
+                resumeBackgroundMusic();
+            }
+        });
+</script>
+</body>
+</html>
